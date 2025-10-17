@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style (1).css">
+</head>
+<body>
+    <nav class="navbar" aria-label="Navegação principal">
+        <div class="navbar__container">
+            <div class="navbar__left">
+                <button class="sidebar__toggle" aria-label="Abrir menu lateral" onclick="document.querySelector('.sidebar').classList.add('sidebar--open');document.querySelector('.sidebar__overlay').style.display='block';">&#9776;</button>
+                <div class="navbar__logo">
+                    <img src="logo.png" alt="Logo Goats" class="navbar__logo-img">
+                    <span class="navbar__logo-text">Goats</span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item"><a href="#" class="navbar__link">Início</a></li>
+                    <li class="navbar__item"><a href="#" class="navbar__link">Sobre</a></li>
+                    <li class="navbar__item"><a href="#" class="navbar__link">Serviços</a></li>
+                    <li class="navbar__item"><a href="#" class="navbar__link">Contato</a></li>
+                </ul>
+            </div>
+            <div class="navbar__right">
+                <div class="navbar__search">
+                    <input type="text" class="navbar__search-input" placeholder="Buscar...">
+                    <button class="navbar__search-button">Buscar</button>
+                </div>
+                <div class="navbar__user">
+                    <img src="https://web.gs.emory.edu/vulnerability/_includes/images/no-image.jpg" alt="Avatar do usuário" class="navbar__user-avatar">
+                    <span class="navbar__user-name">Usuário</span>
+                </div>
+                <div class="navbar__notifications">
+                    <button class="navbar__notifications-button">Notificações</button>
+                    <div class="navbar__notifications-dropdown">
+                        <p>Sem novas notificações</p>
+                    </div>
+                </div>
+                <div class="navbar__settings">
+                    <button class="navbar__settings-button">Configurações</button>
+                    <div class="navbar__settings-dropdown">
+                        <a href="#" class="navbar__settings-link">Perfil</a>
+                        <a href="#" class="navbar__settings-link">Conta</a>
+                        <a href="#" class="navbar__settings-link">Sair</a>
+                    </div>
+                </div>
+                <div class="navbar__theme-toggle">
+                    <button class="navbar__theme-button">Alternar Tema</button>
+                </div>
+                <div class="navbar__language-selector">
+                    <select class="navbar__language-dropdown" aria-label="Selecionar idioma">
+                        <option value="pt" selected>Português</option>
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                    </select>
+                </div>
+                <div class="navbar__help">
+                    <a href="#" class="navbar__help-link">Ajuda</a>
+                </div>
+                <div class="navbar__feedback">
+                    <a href="#" class="navbar__feedback-link">Feedback</a>
+                </div>
+                <div class="navbar__logout">
+                    <button class="navbar__logout-button">Sair</button>
+                </div>
+            </div>
+        </div>
+        <div class="navbar__breadcrumb">
+            <nav aria-label="Breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Início</a></li>
+                    <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Dashboard</a></li>
+                    <li class="breadcrumb__item breadcrumb__item--active" aria-current="page">Página Atual</li>
+                </ol>
+            </nav>
+        </div>
+    </nav>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <button class="sidebar__close" aria-label="Fechar menu lateral" onclick="document.querySelector('.sidebar').classList.remove('sidebar--open');document.querySelector('.sidebar__overlay').style.display='none';">&times;</button>
+            <div class="sidebar__profile">
+                <img src="https://web.gs.emory.edu/vulnerability/_includes/images/no-image.jpg" alt="Avatar do usuário" class="sidebar__avatar">
+                <div class="sidebar__username">Usuário</div>
+            </div>
+            <ul class="sidebar__menu">
+                <li class="sidebar__item"><a href="#" class="sidebar__link active"><span>🏠</span> Visão Geral</a></li>
+                <li class="sidebar__item"><a href="#" class="sidebar__link"><span>📊</span> Relatórios</a></li>
+                <li class="sidebar__item"><a href="#" class="sidebar__link"><span>📈</span> Análises</a></li>
+                <li class="sidebar__item"><a href="#" class="sidebar__link"><span>⬇️</span> Exportar</a></li>
+            </ul>
+        </aside>
+        <div class="sidebar__overlay" onclick="document.querySelector('.sidebar').classList.remove('sidebar--open');this.style.display='none';"></div>
+        <main class="main-content">
+            <h1 class="main-content__title">Dashboard</h1>
+            <section class="main-content__widgets">
+                <div class="widget widget--highlight">
+                    <div class="widget__icon">📈</div>
+                    <div>
+                        <div class="widget__number">1.245</div>
+                        <div class="widget__label">Acessos</div>
+                    </div>
+                </div>
+                <div class="widget widget--highlight">
+                    <div class="widget__icon">📝</div>
+                    <div>
+                        <div class="widget__number">312</div>
+                        <div class="widget__label">Relatórios</div>
+                    </div>
+                </div>
+                <div class="widget widget--highlight">
+                    <div class="widget__icon">👤</div>
+                    <div>
+                        <div class="widget__number">58</div>
+                        <div class="widget__label">Usuários</div>
+                    </div>
+                </div>
+            </section>
+            <section class="cards">
+                <article class="card">Card 1</article>
+                <article class="card">Card 2</article>
+                <article class="card">Card 3</article>
+                <article class="card">Card 4</article>
+            </section>
+            <div class="table-wrap">
+                <div class="table-scroll-hint" aria-hidden="true">
+                    <span>Arraste para o lado &rarr;</span>
+                </div>
+                <table class="tabela">
+                    <thead>
+                        <tr>
+                            <th>Cabeçalho 1</th>
+                            <th>Cabeçalho 2</th>
+                            <th>Cabeçalho 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dado 1</td>
+                            <td>Dado 2</td>
+                            <td>Dado 3</td>
+                        </tr>
+                        <tr>
+                            <td>Dado 4</td>
+                            <td>Dado 5</td>
+                            <td>Dado 6</td>
+                        </tr>
+                        <tr>
+                            <td>Dado 7</td>
+                            <td>Dado 8</td>
+                            <td>Dado 9</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>© 2025 Goats</p>
+        </footer>
+    </div>
+</body>
+</html>
